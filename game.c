@@ -40,9 +40,11 @@ int rockpaperscissor(char you, char comp)
 int main()
 {
     int t = 5;
+    int myscore = 0, comscore = 0;
     while (t--)
     {
         char you, comp;
+
         srand(time(0));
         int number = rand() % 100 + 1;
 
@@ -70,12 +72,24 @@ int main()
         else if (result == 1)
         {
             printf("\033[32m *************************You Win!**********************************\033[0m\n");
+            myscore++;
         }
         else
         {
             printf("\033[31m xxxxxxxxxxxxxxxxxxxxxxxxYou Lose!xxxxxxxxxxxxxxxxxxxxxxxxxxxxx\033[0m\n");
+            comscore++;
         }
         printf("You chose %c and computer chose %c.\n ", you, comp);
     }
+    printf("  ###################################################\n");
+printf("   #      Your Score            Bot Score            #\n");
+printf("   #      ___________          ____________          #\n");
+printf("   #                                                 #\n");
+printf("   #         %d                     %d                 #\n",myscore,comscore);
+printf("   #                                                 #\n");
+printf("   #                                                 #\n");
+printf("   #                                                 #\n");
+printf("   ###################################################\n");
+
     return 0;
 }
